@@ -1,0 +1,54 @@
+{% extends 'todolist/base.html' %}
+{% load static %}
+
+{% block 标题 %}您的豆瓣数据显示页
+{% endblock 标题 %}
+
+
+{% block css %}"{% static 'todolist/css/home.css' %}"
+{% endblock css %}
+
+
+{% block 关于 %}"{% url 'todolist:关于'%}"{% endblock 关于 %}  
+
+{% block 主体 %}
+  
+{% if 信息 %}
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>{{信息}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>  
+{% endif %}
+<br>
+<div class = 'table-responsive'>
+        <table class="table table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">序号</th>
+                    <th scope="col">封面</th>
+                    <th scope="col">书名</th>
+                  </tr>
+                </thead>
+                 <tbody>
+
+                  {% for item in 清单 %}
+                      <tr class="table-dark">
+                        <th calss ="text-dark" scope="row">{{forloop.counter}}</th>
+                        <td><img src="{{item.img}}" height="148" width="100"></td>
+                        <td class = "text-dark">{{item.title}}</td>
+                      </tr>
+                    
+                  {% endfor %}
+                     
+                </tbody> 
+              </table>
+
+
+
+</div>
+
+{% endblock 主体 %}
+
+

@@ -1,0 +1,20 @@
+{% extends 'todolist/base.html' %}
+
+{% block 标题 %}关于本站
+{% endblock 标题 %}
+
+
+{% block 待办 %} "{% url 'todolist:主页'%}"
+{% endblock 待办 %} 
+
+{% block css %}todolist/about.css
+{% endblock css %}
+
+{% block 主体 %}
+<br>
+<h4>
+    一款小巧的爬取豆瓣网的数据显示网站
+</h4>
+
+{% endblock 主体 %}
+  

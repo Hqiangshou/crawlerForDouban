@@ -1,0 +1,16 @@
+#navtop{
+    font-size: 1.1em;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+nav input{
+    widows: 39%!important;
+}
+
+body{
+    background-color: #f7f9f9;
+}
+
+main{
+    font-size: 1.1em;
+}
